@@ -33,8 +33,7 @@ collection = db["videos"]
 @bot.channel_post_handler(content_types=["video"])
 def handle_channel_post(message):
     # OZINGZINI TELEGRAM KANALINGIZNI KIRITING
-    if message.chat.username == "
-    topkinolar723bot":
+    if message.chat.username == "topkinolar723bot":
         collection.insert_one({
             "file_id": message.video.file_id,
             "caption": message.caption
@@ -104,3 +103,4 @@ if __name__ == "__main__":
     threading.Thread(target=run_bot).start()
 
     app.run(host="0.0.0.0", port=5000, debug=False)   
+
